@@ -2,6 +2,7 @@
 
 This API is the first serious effort towards enabling Yo! Noid 2 to develop mods while leaving (most) of the game assets intact.
 Most of the assembly patching work is greatly simplified thanks to MonoMod. Check it out here: https://github.com/0x0ade/MonoMod
+
 Also many thanks to HollowKnight Modding Community, whose framework has been leveraged greatly to form the foundation for Pepperoni:
 https://github.com/seanpr96/HollowKnight.Modding
 
