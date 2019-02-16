@@ -1,0 +1,160 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{05672F91-FA7C-4E31-865E-D7ABE1A898BF}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Pepperoni</RootNamespace>
+    <AssemblyName>Assembly-CSharp.mm</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>Vanilla\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp-firstpass">
+      <HintPath>Vanilla\Assembly-CSharp-firstpass.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>Monomod\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Mdb">
+      <HintPath>Monomod\Mono.Cecil.Mdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Pdb">
+      <HintPath>Monomod\Mono.Cecil.Pdb.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil.Rocks">
+      <HintPath>Monomod\Mono.Cecil.Rocks.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoMod">
+      <HintPath>Monomod\MonoMod.exe</HintPath>
+    </Reference>
+    <Reference Include="MonoMod.BaseLoader">
+      <HintPath>Monomod\MonoMod.BaseLoader.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoMod.DebugIL">
+      <HintPath>Monomod\MonoMod.DebugIL.exe</HintPath>
+    </Reference>
+    <Reference Include="MonoMod.RuntimeDetour">
+      <HintPath>Monomod\MonoMod.RuntimeDetour.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoMod.RuntimeDetour.HookGen">
+      <HintPath>Monomod\MonoMod.RuntimeDetour.HookGen.exe</HintPath>
+    </Reference>
+    <Reference Include="MonoMod.Utils">
+      <HintPath>Monomod\MonoMod.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="TextMeshPro-1.0.55.56.0b10, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Vanilla\TextMeshPro-1.0.55.56.0b10.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>Vanilla\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Vanilla\UnityEngine.AudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>Vanilla\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Vanilla\UnityEngine.ImageConversionModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Vanilla\UnityEngine.IMGUIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.PhysicsModule">
+      <HintPath>Vanilla\UnityEngine.PhysicsModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.TextRenderingModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Vanilla\UnityEngine.TextRenderingModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Vanilla\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Vanilla\UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="YamlDotNet">
+      <HintPath>Monomod\YamlDotNet.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CanvasUtils.cs" />
+    <Compile Include="Console.cs" />
+    <Compile Include="DialogueUtils.cs" />
+    <Compile Include="Callbacks.cs" />
+    <Compile Include="ILogger.cs" />
+    <Compile Include="IMod.cs" />
+    <Compile Include="IModManagerSettings.cs" />
+    <Compile Include="IToggleMod.cs" />
+    <Compile Include="Loggable.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="LogLevel.cs" />
+    <Compile Include="Mod.cs" />
+    <Compile Include="ModContentDrawer.cs" />
+    <Compile Include="ModHooks.cs" />
+    <Compile Include="ModLoader.cs" />
+    <Compile Include="ModMenu\ModMenuGui.cs" />
+    <Compile Include="Patches\DebugManager.cs" />
+    <Compile Include="Patches\DialogueSystem.cs" />
+    <Compile Include="Patches\Speaker.cs" />
+    <Compile Include="Patches\CollectibleScript.cs" />
+    <Compile Include="Patches\MonoModRules.cs" />
+    <Compile Include="Patches\PlayerMachine.cs" />
+    <Compile Include="Patches\SaveScript.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proxies.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="ExampleMods\" />
+    <Folder Include="Monomod\" />
+    <Folder Include="Vanilla\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>MonoMod.exe Assembly-CSharp.dll
+MonoMod.RuntimeDetour.HookGen.exe --private Assembly-CSharp.dll
+
+rem "Rename files so the assembly has the correct name and the output works"
+move "MONOMODDED_Assembly-CSharp.dll" "MONOModded.dll"
+
+$(SolutionDir)\ILRepack\ILRepack.exe /out:OUTPUT_Assembly-CSharp.dll MONOModded.dll MMHOOK_Assembly-CSharp.dll MonoMod.Utils.dll Mono.Cecil.dll MonoMod.RuntimeDetour.dll
+copy /Y "$(ProjectDir)$(OutputPath)\OUTPUT_Assembly-CSharp.dll" "E:\Games\Yo Noid 2 GOAY\noid_Data\Managed\Assembly-CSharp.dll"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

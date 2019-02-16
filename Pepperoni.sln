@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.271
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pepperoni", "Pepperoni\Pepperoni.csproj", "{05672F91-FA7C-4E31-865E-D7ABE1A898BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MetalNoid", "ExampleMods\MetalNoid\MetalNoid.csproj", "{94DFAE9F-C69A-43DD-9435-0CD173DECF9E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{05672F91-FA7C-4E31-865E-D7ABE1A898BF} = {05672F91-FA7C-4E31-865E-D7ABE1A898BF}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PPR_Standalone", "ExampleMods\PPR_Standalone\PPR_Standalone.csproj", "{F7DF11D5-D74C-42BF-A110-2421A9AC963A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{05672F91-FA7C-4E31-865E-D7ABE1A898BF} = {05672F91-FA7C-4E31-865E-D7ABE1A898BF}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Noid_CounterHUDMod", "ExampleMods\Noid_CounterHUDMod\Noid_CounterHUDMod\Noid_CounterHUDMod.csproj", "{B30FDF3C-3023-4765-9B61-4D94B12487D0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{05672F91-FA7C-4E31-865E-D7ABE1A898BF} = {05672F91-FA7C-4E31-865E-D7ABE1A898BF}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{05672F91-FA7C-4E31-865E-D7ABE1A898BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{05672F91-FA7C-4E31-865E-D7ABE1A898BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{05672F91-FA7C-4E31-865E-D7ABE1A898BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{05672F91-FA7C-4E31-865E-D7ABE1A898BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{94DFAE9F-C69A-43DD-9435-0CD173DECF9E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{94DFAE9F-C69A-43DD-9435-0CD173DECF9E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{94DFAE9F-C69A-43DD-9435-0CD173DECF9E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{94DFAE9F-C69A-43DD-9435-0CD173DECF9E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F7DF11D5-D74C-42BF-A110-2421A9AC963A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F7DF11D5-D74C-42BF-A110-2421A9AC963A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F7DF11D5-D74C-42BF-A110-2421A9AC963A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F7DF11D5-D74C-42BF-A110-2421A9AC963A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B30FDF3C-3023-4765-9B61-4D94B12487D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B30FDF3C-3023-4765-9B61-4D94B12487D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B30FDF3C-3023-4765-9B61-4D94B12487D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B30FDF3C-3023-4765-9B61-4D94B12487D0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {ED686B61-1079-4570-AB7E-66A2438483DD}
+	EndGlobalSection
+EndGlobal
