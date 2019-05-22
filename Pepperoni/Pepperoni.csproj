@@ -138,6 +138,7 @@
     <Compile Include="Patches\MonoModRules.cs" />
     <Compile Include="Patches\PlayerMachine.cs" />
     <Compile Include="Patches\SaveScript.cs" />
+    <Compile Include="Patches\VoidOut.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Proxies.cs" />
   </ItemGroup>
