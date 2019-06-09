@@ -2,7 +2,6 @@
 using System;
 using System.IO;
 using System.Reflection;
-using System.Text;
 using UnityEngine;
 
 namespace MetalNoid
@@ -11,18 +10,29 @@ namespace MetalNoid
     {
 
         private Texture2D metalTexture = null;
-
         public MetalNoid() : base("MetalNoidMod")
         {
         }
 
-        public override string GetVersion() => "1.2";
+        public override string GetVersion() => "1.42";
 
         public override void Initialize()
         {
+            string fileName = "";
+            foreach (string fn in Assembly.GetExecutingAssembly().GetManifestResourceNames())
+            {
+                if (fn.Contains("Noid_gold"))
+                {
+                    fileName = fn;
+                    break;
+                }
+            }
+
             try
             {
-                var fileName = Assembly.GetExecutingAssembly().GetManifestResourceNames()[0];
+                if (fileName == "")
+                    throw new FileNotFoundException();
+
                 using (Stream imageStream = Assembly.GetExecutingAssembly().GetManifestResourceStream(fileName))
                 {
                     byte[] imageBuffer = new byte[imageStream.Length];
@@ -32,7 +42,6 @@ namespace MetalNoid
                     metalTexture.LoadImage(imageBuffer);
                     LogDebug("Loaded Metal Texture");
                     ModHooks.Instance.OnPlayerSetCostumeHook += OnSetCostume;
-                    ModHooks.Instance.OnPlayerEarlyUpdateHook += OnEarlyUpdate;
                 }
             }
             catch (Exception e)
@@ -40,18 +49,20 @@ namespace MetalNoid
                 LogError(e);
             }
         }
+
         public void OnSetCostume(SkinnedMeshRenderer skinnedMesh)
         {
             if (PlayerMachine.CurrentCostume != Costumes.Default) return;
-
-            var mat = skinnedMesh.material;
-            mat.shader = Shader.Find("Standard");
-            mat.DisableKeyword("_METALLICGLOSSMAP");
-            mat.SetFloat("_Mode", 0f);
-            mat.SetTexture("_MainTex", metalTexture);
-            mat.SetFloat("_Metallic", 0.7f);
-            mat.SetFloat("_Glossiness", 0.55f);
-            
+            var mats = Resources.FindObjectsOfTypeAll<Material>();
+            foreach(var m in mats)
+            {
+                if(m.name.Contains("Complete"))
+                {
+                    LogDebug("Found material!");
+                    skinnedMesh.material = m;
+                    skinnedMesh.material.SetTexture("_MainTex", metalTexture);
+                }
+            }
         }
 
         public void OnEarlyUpdate(PlayerMachine playerMachine)

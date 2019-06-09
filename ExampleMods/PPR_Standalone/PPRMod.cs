@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Reflection;
 using System.Text;
 using Pepperoni;
@@ -10,11 +11,13 @@ namespace PPR_Standalone
     {
         FieldInfo screamField = null;
         //CounterHUD _counter;
-        public PPRMod() : base("PPR", "1.3")
+        public PPRMod() : base("PPR", "1.5")
         {
         }
 
         private const float zapPercent = 0.07f;
+        private const float glitchPercent = 0.02f;
+        bool glitchRunning = false;
 
         public override void Initialize()
         {
@@ -35,13 +38,30 @@ namespace PPR_Standalone
                     int costumeIndex = Convert.ToInt32(Math.Truncate(UnityEngine.Random.Range(0f, 3.99f)));
                     p.SetCostume((Costumes)costumeIndex);
                     GameObject.FindGameObjectWithTag("Manager").GetComponent<DialogueSystem>().UpdateCostumePortrait();
-                    if (UnityEngine.Random.value <= zapPercent)
+                    var roll = UnityEngine.Random.value;
+                    if(roll <= glitchPercent && !glitchRunning)
+                    {
+                        glitchRunning = true;
+                        p.RunCoroutine(GlitchCoroutine);
+                    }
+                    else if (UnityEngine.Random.value <= zapPercent)
                     {
                         LogDebug($"{_name}: Zaptime!");
                         p.GetStunned(1.2f);
                     }
                 }
             }
+        }
+
+
+        protected IEnumerator GlitchCoroutine()
+        {
+            LogDebug("Enable Glitch");
+            Shader.SetGlobalFloat("_Glitcherino", 0.5f);
+            yield return new WaitForSeconds(3.0f);
+            LogDebug("Disable glitch");
+            Shader.SetGlobalFloat("_Glitcherino", 0.0f);
+            glitchRunning = false;
         }
 
         public string OnParseScript(string text)

@@ -1,5 +1,6 @@
 ﻿using MonoMod;
 using System;
+using System.Collections;
 using System.IO;
 using System.Reflection;
 using UnityEngine;
@@ -10,6 +11,8 @@ namespace Pepperoni.Patches
     [MonoModPatch("global::PlayerMachine")]
     public class PlayerMachine : global::PlayerMachine
     {
+        public delegate IEnumerator WaitFuncDelegate();
+
         [MonoModIgnore] private SkinnedMeshRenderer SkinnedMesh;
         [MonoModIgnore] private Vector3 LastGround;
 
@@ -48,5 +51,10 @@ namespace Pepperoni.Patches
 
         public bool IsCoyoteFrameEnabled(bool value)
             => CoyoteFrameEnabled ?? value;
+
+        public void RunCoroutine(WaitFuncDelegate waitFunc)
+        {
+            StartCoroutine(waitFunc());
+        }
     }
 }

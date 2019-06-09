@@ -9,7 +9,9 @@ namespace Pepperoni
         public static GameObject OverlayCanvas;
         private static GameObject _textPanel;
         public static Font Arial;
-        private readonly List<string> _messages = new List<string>(20);
+
+        private const int LIST_LEN = 19;
+        private readonly List<string> _messages = new List<string>(LIST_LEN);
         private bool _enabled = false;
 
 
@@ -26,7 +28,7 @@ namespace Pepperoni
                 DontDestroyOnLoad(OverlayCanvas);
 
                 GameObject background = CanvasUtil.CreateImagePanel(OverlayCanvas,
-                    new Color32(0x28, 0x28, 0x28, 0xF8),
+                    new Color32(0x28, 0x28, 0x28, 0xE8),
                     new CanvasUtil.RectData(new Vector2(0, 300), new Vector2(0, 0), 
                     new Vector2(0, 0), new Vector2(1, 0), new Vector2(0, 0)));
 
@@ -52,7 +54,7 @@ namespace Pepperoni
 
         public void AddText(string message)
         {
-            if (_messages.Count > 20)
+            if (_messages.Count > LIST_LEN)
                 _messages.RemoveAt(0);
 
             _messages.Add(message);
