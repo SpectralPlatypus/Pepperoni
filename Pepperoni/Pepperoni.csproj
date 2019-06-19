@@ -80,6 +80,7 @@
     <Reference Include="UnityEngine">
       <HintPath>Vanilla\UnityEngine.dll</HintPath>
     </Reference>
+    <Reference Include="UnityEngine.AnimationModule, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null" />
     <Reference Include="UnityEngine.AudioModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Vanilla\UnityEngine.AudioModule.dll</HintPath>
@@ -132,6 +133,10 @@
     <Compile Include="ModLoader.cs" />
     <Compile Include="ModMenu\ModMenuGui.cs" />
     <Compile Include="Patches\DebugManager.cs" />
+    <Compile Include="Patches\DRM\IntroSwitch.cs" />
+    <Compile Include="Patches\DRM\TitleScreen.cs" />
+    <Compile Include="Patches\DRM\Manager.cs" />
+    <Compile Include="Patches\TitleScreen.cs" />
     <Compile Include="Patches\DialogueSystem.cs" />
     <Compile Include="Patches\Speaker.cs" />
     <Compile Include="Patches\CollectibleScript.cs" />

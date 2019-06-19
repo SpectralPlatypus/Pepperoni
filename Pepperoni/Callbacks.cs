@@ -55,4 +55,10 @@ namespace Pepperoni
     /// Ideal for point for mods to save their internal data
     /// </summary>
     public delegate void SaveGameAfterSaveCallback();
+
+    /// <summary>
+    /// Called after the game finishes saving data.
+    /// Ideal for point for mods to save their internal data
+    /// </summary>
+    public delegate void NewGameStartedCallback();
 }

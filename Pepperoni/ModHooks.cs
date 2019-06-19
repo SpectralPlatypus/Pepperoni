@@ -41,7 +41,7 @@ namespace Pepperoni
         /// <summary>
         /// Mod API Version Minor Number
         /// </summary>
-        private const int _modVersionMinor = 0;
+        private const int _modVersionMinor = 5;
 
         /// <summary>
         /// Mod API Version string in "vX.Y" format
@@ -131,6 +131,41 @@ namespace Pepperoni
             }
         }
 
+        private event BeforeSceneLoadCallback _BeforeSceneLoad;
+
+        /// <summary>
+        ///  Event Subscriber for Before Scene Load
+        /// </summary>
+        public event BeforeSceneLoadCallback BeforeSceneLoad
+        {
+            add
+            {
+                _BeforeSceneLoad += value;
+            }
+            remove
+            {
+                _BeforeSceneLoad -= value;
+            }
+        }
+
+        internal void OnBeforeSceneLoad(string scene)
+        {
+            if (_BeforeSceneLoad == null) return;
+
+            Delegate[] invocationList = _BeforeSceneLoad.GetInvocationList();
+            foreach (BeforeSceneLoadCallback i in invocationList)
+            {
+                try
+                {
+                    i.Invoke(scene);
+                }
+                catch (Exception ex)
+                {
+                    Logger.LogError("[API] - " + ex);
+                }
+            }
+        }
+
 
         private event AfterSceneLoadCallback _AfterSceneLoad;
 
@@ -151,7 +186,7 @@ namespace Pepperoni
 
         internal void OnAfterSceneLoad(string scene)
         {
-            if (_GetCollectibleHook == null) return;
+            if (_AfterSceneLoad == null) return;
 
             Delegate[] invocationList = _AfterSceneLoad.GetInvocationList();
             foreach (AfterSceneLoadCallback i in invocationList)
@@ -159,6 +194,41 @@ namespace Pepperoni
                 try
                 {
                     i.Invoke(scene);
+                }
+                catch (Exception ex)
+                {
+                    Logger.LogError("[API] - " + ex);
+                }
+            }
+        }
+
+        private event NewGameStartedCallback _NewGameStart;
+
+        /// <summary>
+        ///  Event Subscriber for Scene Load
+        /// </summary>
+        public event NewGameStartedCallback NewGameStart
+        {
+            add
+            {
+                _NewGameStart += value;
+            }
+            remove
+            {
+                _NewGameStart -= value;
+            }
+        }
+
+        internal void OnNewGameStart()
+        {
+            if (_NewGameStart == null) return;
+
+            Delegate[] invocationList = _NewGameStart.GetInvocationList();
+            foreach (NewGameStartedCallback i in invocationList)
+            {
+                try
+                {
+                    i.Invoke();
                 }
                 catch (Exception ex)
                 {

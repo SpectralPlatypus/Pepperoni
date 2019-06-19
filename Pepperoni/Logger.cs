@@ -23,7 +23,7 @@ namespace Pepperoni
         static Logger()
         {
             Debug.Log("Creating Mod Logger");
-            _logLevel = LogLevel.Warn;
+            _logLevel = LogLevel.Debug;
             
             FileStream fileStream = new FileStream(Application.persistentDataPath + ModHooks.PathSeperator + "ModLog.txt", FileMode.Create, FileAccess.Write, FileShare.ReadWrite);
             Writer = new StreamWriter(fileStream, Encoding.UTF8) {AutoFlush = true};

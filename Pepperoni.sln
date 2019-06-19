@@ -20,6 +20,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Noid_CounterHUDMod", "Examp
 		{05672F91-FA7C-4E31-865E-D7ABE1A898BF} = {05672F91-FA7C-4E31-865E-D7ABE1A898BF}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IGTMod", "ExampleMods\IGTMod\IGTMod\IGTMod.csproj", "{7E1666AF-EF01-4067-9D96-F13E219D7AF1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +44,10 @@ Global
 		{B30FDF3C-3023-4765-9B61-4D94B12487D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B30FDF3C-3023-4765-9B61-4D94B12487D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B30FDF3C-3023-4765-9B61-4D94B12487D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E1666AF-EF01-4067-9D96-F13E219D7AF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E1666AF-EF01-4067-9D96-F13E219D7AF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E1666AF-EF01-4067-9D96-F13E219D7AF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E1666AF-EF01-4067-9D96-F13E219D7AF1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
