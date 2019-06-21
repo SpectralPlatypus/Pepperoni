@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-#pragma warning disable CS0414, CS0108, CS0618
+#pragma warning disable CS0414, CS0108, CS0618, CS0649
 namespace Pepperoni.Patches
 {
     [MonoModPatch("global::Manager")]

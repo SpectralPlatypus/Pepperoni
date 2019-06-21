@@ -58,14 +58,14 @@ namespace IGTMod
 
         private void SceneManager_sceneLoaded(Scene arg0, LoadSceneMode arg1)
         {
-            // LogDebug("IGT Scene Change: " + arg0.name);
+            LogDebug("IGT Scene Change: " + arg0.name);
             if (arg0.name == "title")
             {
                 hud.StopTimer();
             }
             else if(arg0.name.StartsWith("intro") || arg0.name == "LevelIntro")
             {
-                // Pepperoni.Logger.LogDebug("(level)Intro started");
+                LogDebug("(level)Intro started");
                 hud.RunTimer();
             }
         }

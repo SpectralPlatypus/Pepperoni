@@ -61,7 +61,7 @@
       <HintPath>E:\Games\Yo Noid 2 GOAY\noid_Data\Managed\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UIModule">
-      <HintPath>..\..\Pepperoni\Pepperoni\Vanilla\UnityEngine.UIModule.dll</HintPath>
+      <HintPath>E:\Games\Yo Noid 2 GOAY\noid_Data\Managed\UnityEngine.UIModule.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

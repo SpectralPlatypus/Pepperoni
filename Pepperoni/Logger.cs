@@ -12,7 +12,7 @@ namespace Pepperoni
     // This is threadsafe, but it's blocking.  Hopefully mods don't try to log so much that it becomes an issue.  If it does we'll have to look at a better system.
     public static class Logger
     {
-        private static readonly object Locker = new object();
+        private static readonly object logLockerObj = new object();
         private static readonly StreamWriter Writer;
 
         private static LogLevel _logLevel;
@@ -116,7 +116,7 @@ namespace Pepperoni
         /// <param name="text">Text to write</param>
         private static void WriteToFile(string text)
         {
-            lock (Locker)
+            lock (logLockerObj)
             {
                 if (ModHooks.IsInitialized)
                     ModHooks.Instance.LogConsole(text);

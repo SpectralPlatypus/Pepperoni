@@ -79,6 +79,7 @@ namespace Pepperoni
         /// Internal function for displaying messages on console window
         /// </summary>
         /// <param name="message">Message to be added to console output</param>
+        [System.Diagnostics.Conditional("DEBUG")]
         public void LogConsole(string message)
         {
             if (_console == null)

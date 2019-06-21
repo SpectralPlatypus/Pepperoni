@@ -18,11 +18,6 @@ namespace MonoMod
 
     static class MonoModRules
     {
-        static MonoModRules()
-        {
-            //MonoModRules.
-        }
-
         public static void PatchJumpSuperUpdate(MethodDefinition method, CustomAttribute attrib)
         {
             if (!method.HasBody)

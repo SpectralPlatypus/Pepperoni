@@ -3,6 +3,7 @@ using System;
 using System.Diagnostics;
 using TMPro;
 using UnityEngine;
+using Logger = Pepperoni.Logger;
 
 namespace IGTMod
 {
@@ -17,7 +18,7 @@ namespace IGTMod
         private static CanvasUtil.RectData topRightHD = new CanvasUtil.RectData(new Vector2(0, 0), new Vector2(0, 0),
             new Vector2(0.98f, 0.80f), new Vector2(0.99f, .96f), new Vector2(0, 0));
 
-        private bool _enabled = false;
+        // private bool _enabled = false;
 
         private static bool gameEnd = false;
         private static bool stopped = true;
@@ -29,9 +30,11 @@ namespace IGTMod
         {
             _remastered = DebugManager.remastered;
             igTimer = new Stopwatch();
+
             var ar = AspectRatio.GetAspectRatio(Screen.width, Screen.height);
             if (ar.x == 16f && ar.y == 9f) wideAspect = true;
-            Pepperoni.Logger.LogWarn(wideAspect);
+            Logger.LogDebug($"Wide Aspect: {wideAspect}");
+
             DontDestroyOnLoad(gameObject);
             if (OverlayCanvas == null)
             {
@@ -48,11 +51,12 @@ namespace IGTMod
             }
         }
 
+        /*
         public void ToggleState(bool enabled, PlayerMachine playerMachine)
         {
             _enabled = enabled;
-            //PlayerMachine = (_enabled) ? playerMachine : null;
         }
+        */
 
         public void ResetTimer()
         {
