@@ -3,6 +3,7 @@ using System;
 using System.Diagnostics;
 using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Logger = Pepperoni.Logger;
 
 namespace IGTMod
@@ -25,6 +26,7 @@ namespace IGTMod
         private static bool _remastered;
         private bool wideAspect;
         private Stopwatch igTimer;
+        public bool AcuMode { get; set; }
 
         public void Awake()
         {
@@ -106,6 +108,17 @@ namespace IGTMod
             {
                 _remastered = DebugManager.remastered;
                 CanvasUtil.UpdateRectTransform(_background, (_remastered) ? topRightHD : topRightLegacy);
+            }
+
+            if(SceneManager.GetActiveScene().name == "title")
+            {
+                if(Input.GetKeyDown(KeyCode.I))
+                {
+                    igTimer.Stop();
+                    igTimer.Reset();
+                    AcuMode = !AcuMode;
+                }
+                t.text += "\n[I] " + (AcuMode ? "ACU" : "Any%");
             }
         }
     }

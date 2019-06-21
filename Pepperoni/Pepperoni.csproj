@@ -133,6 +133,7 @@
     <Compile Include="ModLoader.cs" />
     <Compile Include="ModMenu\ModMenuGui.cs" />
     <Compile Include="Patches\DebugManager.cs" />
+    <Compile Include="Patches\DRM\Pause.cs" />
     <Compile Include="Patches\DRM\IntroSwitch.cs" />
     <Compile Include="Patches\DRM\TitleScreen.cs" />
     <Compile Include="Patches\DRM\Manager.cs" />

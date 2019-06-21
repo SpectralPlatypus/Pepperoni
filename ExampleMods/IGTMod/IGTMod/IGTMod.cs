@@ -9,9 +9,11 @@ namespace IGTMod
         private const string _modVersion = "1.3";
         private IGTHUD hud = null;
         private static GameObject go = null;
+        private Costumes lastCostume;
 
         public IGTMod() : base("IGTMod")
         {
+            lastCostume = Costumes.Default;
         }
 
         public override string GetVersion() => _modVersion;
@@ -52,8 +54,13 @@ namespace IGTMod
 
         private void Instance_NewGameStart()
         {
-            hud.ResetTimer();
-            hud.RunTimer();
+            if (hud.AcuMode == false ||
+                (hud.AcuMode && lastCostume == PlayerMachine.CurrentCostume))
+            {
+                hud.ResetTimer();
+                hud.RunTimer();
+            }
+            lastCostume = PlayerMachine.CurrentCostume;
         }
 
         private void SceneManager_sceneLoaded(Scene arg0, LoadSceneMode arg1)
@@ -61,7 +68,8 @@ namespace IGTMod
             LogDebug("IGT Scene Change: " + arg0.name);
             if (arg0.name == "title")
             {
-                hud.StopTimer();
+                if (hud.AcuMode == false) hud.StopTimer();
+                else hud.RunTimer();
             }
             else if(arg0.name.StartsWith("intro") || arg0.name == "LevelIntro")
             {
