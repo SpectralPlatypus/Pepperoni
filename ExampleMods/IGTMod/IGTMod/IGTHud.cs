@@ -19,20 +19,21 @@ namespace IGTMod
         private static readonly CanvasUtil.RectData topRightHD = new CanvasUtil.RectData(new Vector2(0, 0), new Vector2(0, 0),
             new Vector2(0.98f, 0.80f), new Vector2(0.99f, .96f), new Vector2(0, 0));
 
-        private bool gameEnd;
+        private static bool gameEnd;
         private bool stopped;
         private bool _remastered;
         private bool wideAspect;
-        private Stopwatch igTimer;
-        private Costumes? lastCostume;
+        private bool textToggle;
+        private static Stopwatch igTimer = new Stopwatch();
+        private static Costumes? lastCostume;
         public bool AcuMode { get; set; }
 
         public void Awake()
         {
             gameEnd = false;
             stopped = true;
+            textToggle = true;
             _remastered = DebugManager.remastered;
-            igTimer = new Stopwatch();
             lastCostume = null;
 
             var ar = AspectRatio.GetAspectRatio(Screen.width, Screen.height);
@@ -105,6 +106,11 @@ namespace IGTMod
         public void Update()
         {
             var t = _textPanel.GetComponent<TextMeshProUGUI>();
+            if (Input.GetKeyDown(KeyCode.F11))
+            {
+                textToggle = !textToggle;
+            }
+            t.alpha = textToggle ? 1.0f : 0.0f;
             var timeSpan = igTimer.Elapsed;
             string colorCode = gameEnd ? "48F259" : "FFFFFF";
             t.text = string.Format(
@@ -116,7 +122,6 @@ namespace IGTMod
                 _remastered = DebugManager.remastered;
                 CanvasUtil.UpdateRectTransform(_background, (_remastered) ? topRightHD : topRightLegacy);
             }
-
             if (SceneManager.GetActiveScene().name == "title")
             {
                 if (Input.GetKeyDown(KeyCode.I))
