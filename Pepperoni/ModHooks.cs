@@ -41,7 +41,7 @@ namespace Pepperoni
         /// <summary>
         /// Mod API Version Minor Number
         /// </summary>
-        private const int _modVersionMinor = 5;
+        private const int _modVersionMinor = 6;
 
         /// <summary>
         /// Mod API Version string in "vX.Y" format

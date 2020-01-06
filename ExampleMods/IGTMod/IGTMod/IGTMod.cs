@@ -6,7 +6,7 @@ namespace IGTMod
 {
     public class IGTMod : Mod
     {
-        private const string _modVersion = "1.7";
+        private const string _modVersion = "2.0";
         private IGTHUD hud = null;
         private static GameObject go = null;
 
