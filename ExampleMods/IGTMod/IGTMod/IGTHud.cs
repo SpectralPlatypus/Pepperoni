@@ -1,5 +1,4 @@
 ﻿using Pepperoni;
-using System;
 using System.Diagnostics;
 using TMPro;
 using UnityEngine;
@@ -14,10 +13,10 @@ namespace IGTMod
         private static GameObject _textPanel = null;
         private static GameObject _background = null;
         private static readonly CanvasUtil.RectData topRightLegacy = new CanvasUtil.RectData(new Vector2(0, 0), new Vector2(0, 0),
-                    new Vector2(0.86f, 0.80f), new Vector2(0.95f, .96f), new Vector2(0, 0));
+                    new Vector2(0.75f, 0.0f), new Vector2(0.81f, 0.96f), new Vector2(0, 0));
 
         private static readonly CanvasUtil.RectData topRightHD = new CanvasUtil.RectData(new Vector2(0, 0), new Vector2(0, 0),
-            new Vector2(0.98f, 0.80f), new Vector2(0.99f, .96f), new Vector2(0, 0));
+            new Vector2(0.85f, 0.0f), new Vector2(0.93f, .96f), new Vector2(0, 0));
 
         private static bool gameEnd;
         private bool stopped;
@@ -26,6 +25,7 @@ namespace IGTMod
         private bool textToggle;
         private static Stopwatch igTimer = new Stopwatch();
         private static Costumes? lastCostume;
+        private TextMeshProUGUI tmProObjRef;
         public bool AcuMode { get; set; }
 
         public void Awake()
@@ -53,7 +53,11 @@ namespace IGTMod
                 _textPanel = CanvasUtil.CreateTMProPanel(_background, string.Empty, 24,
                     TextAnchor.UpperLeft,
                     new CanvasUtil.RectData(new Vector2(-5, -5), new Vector2(0, 0), new Vector2(0, 0), new Vector2(1, 1)));
+
+                tmProObjRef = _textPanel.GetComponent<TextMeshProUGUI>();
+                tmProObjRef.alignment = TextAlignmentOptions.TopRight;
             }
+
         }
 
         public void ResetTimer()
@@ -78,6 +82,8 @@ namespace IGTMod
         {
             StopTimer();
             gameEnd = !AcuMode;
+            if (gameEnd)
+                textToggle = true;
         }
         public void PauseTimer()
         {
@@ -105,17 +111,22 @@ namespace IGTMod
 
         public void Update()
         {
-            var t = _textPanel.GetComponent<TextMeshProUGUI>();
+
             if (Input.GetKeyDown(KeyCode.F11))
             {
                 textToggle = !textToggle;
             }
-            t.alpha = textToggle ? 1.0f : 0.0f;
+            tmProObjRef.alpha = textToggle ? 1.0f : 0.0f;
             var timeSpan = igTimer.Elapsed;
             string colorCode = gameEnd ? "48F259" : "FFFFFF";
-            t.text = string.Format(
-                "<color=#{3}>{0:D2}:{1:D2}.{2:D3}",
-                timeSpan.Minutes, timeSpan.Seconds, timeSpan.Milliseconds, colorCode);
+            tmProObjRef.text = $"<color=#{colorCode}>";
+            if (timeSpan.Hours > 0)
+            {
+                tmProObjRef.text += string.Format("{0:D1}:", timeSpan.Hours);
+            }
+
+            tmProObjRef.text += string.Format("{0:D2}:{1:D2}.{2:D3}",
+                timeSpan.Minutes, timeSpan.Seconds, timeSpan.Milliseconds);
 
             if (_remastered != DebugManager.remastered && wideAspect)
             {
@@ -128,10 +139,11 @@ namespace IGTMod
                 {
                     igTimer.Stop();
                     igTimer.Reset();
+                    textToggle = true;
                     AcuMode = !AcuMode;
                     lastCostume = null;
                 }
-                t.text += "\n[I] " + (AcuMode ? "ACU" : "Any%");
+                tmProObjRef.text += "\n[I] " + (AcuMode ? "ACU" : "Any%");
             }
         }
     }

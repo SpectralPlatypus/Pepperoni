@@ -31,8 +31,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>E:\Games\Yo Noid 2 GOAY\noid_Data\Managed\Assembly-CSharp.dll</HintPath>
+    <Reference Include="Assembly-CSharp-firstpass">
+      <HintPath>..\..\..\Vanilla\Assembly-CSharp-firstpass.dll</HintPath>
+    </Reference>
+    <Reference Include="OUTPUT_Assembly-CSharp">
+      <HintPath>..\..\..\Pepperoni\bin\Debug\OUTPUT_Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -41,27 +44,27 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Xml" />
     <Reference Include="TextMeshPro-1.0.55.56.0b10">
-      <HintPath>E:\Games\Yo Noid 2 GOAY\noid_Data\Managed\TextMeshPro-1.0.55.56.0b10.dll</HintPath>
+      <HintPath>..\..\..\Vanilla\TextMeshPro-1.0.55.56.0b10.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>E:\Games\Yo Noid 2 GOAY\noid_Data\Managed\UnityEngine.dll</HintPath>
+      <HintPath>..\..\..\Vanilla\UnityEngine.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
-      <HintPath>E:\Games\Yo Noid 2 GOAY\noid_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <HintPath>..\..\..\Vanilla\UnityEngine.CoreModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.ImageConversionModule, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>E:\Games\Yo Noid 2 GOAY\noid_Data\Managed\UnityEngine.ImageConversionModule.dll</HintPath>
+      <HintPath>..\..\..\Vanilla\UnityEngine.ImageConversionModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.TextRenderingModule">
-      <HintPath>E:\Games\Yo Noid 2 GOAY\noid_Data\Managed\UnityEngine.TextRenderingModule.dll</HintPath>
+      <HintPath>..\..\..\Vanilla\UnityEngine.TextRenderingModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>E:\Games\Yo Noid 2 GOAY\noid_Data\Managed\UnityEngine.UI.dll</HintPath>
+      <HintPath>..\..\..\Vanilla\UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UIModule">
-      <HintPath>E:\Games\Yo Noid 2 GOAY\noid_Data\Managed\UnityEngine.UIModule.dll</HintPath>
+      <HintPath>..\..\..\Vanilla\UnityEngine.UIModule.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -74,6 +77,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy /Y "$(TargetPath)" "E:\Games\Yo Noid 2 GOAY\noid_Data\Managed\Mods\$(TargetFileName)"</PostBuildEvent>
+    <PostBuildEvent>copy /Y "$(TargetPath)" "D:\Games\Yo Noid 2 GOAY - Mod\noid_Data\Managed\Mods\$(TargetFileName)"</PostBuildEvent>
   </PropertyGroup>
 </Project>
