@@ -34,7 +34,8 @@
     <Reference Include="Assembly-CSharp-firstpass">
       <HintPath>..\..\..\Vanilla\Assembly-CSharp-firstpass.dll</HintPath>
     </Reference>
-    <Reference Include="OUTPUT_Assembly-CSharp">
+    <Reference Include="OUTPUT_Assembly-CSharp, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\..\Pepperoni\bin\Debug\OUTPUT_Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />

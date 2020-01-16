@@ -54,9 +54,9 @@ namespace MetalNoid
         {
             if (PlayerMachine.CurrentCostume != Costumes.Default) return;
             var mats = Resources.FindObjectsOfTypeAll<Material>();
-            foreach(var m in mats)
+            foreach (var m in mats)
             {
-                if(m.name.Contains("Complete"))
+                if (m.name.Contains("Complete"))
                 {
                     LogDebug("Found material!");
                     skinnedMesh.material = m;

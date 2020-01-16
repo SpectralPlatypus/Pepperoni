@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Pepperoni
+﻿namespace Pepperoni
 {
     ///<inheritdoc />
     /// <summary>
@@ -15,6 +10,6 @@ namespace Pepperoni
         /// <summary>
         /// Called when the mod is disabled or unloaded
         /// </summary>
-         void Unload();
+        void Unload();
     }
 }

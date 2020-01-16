@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-using TMPro;
 
 namespace Pepperoni
 {
@@ -148,7 +148,7 @@ namespace Pepperoni
             }
             foreach (var tpf in Resources.FindObjectsOfTypeAll<TMP_FontAsset>())
             {
-               if(tpf != null && tpf.name.Equals("text font SDF"))
+                if (tpf != null && tpf.name.Equals("text font SDF"))
                 {
                     UIFont = tpf;
                 }
@@ -342,7 +342,7 @@ namespace Pepperoni
         {
             GameObject c = new GameObject();
             c.AddComponent<Canvas>().renderMode = renderMode;
-            if(renderMode == RenderMode.ScreenSpaceCamera)
+            if (renderMode == RenderMode.ScreenSpaceCamera)
             {
                 c.GetComponent<Canvas>().worldCamera = camera;
             }

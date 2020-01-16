@@ -1,7 +1,7 @@
-﻿using UnityEngine;
-using TMPro;
-using static Pepperoni.CanvasUtil;
+﻿using TMPro;
+using UnityEngine;
 using UnityEngine.UI;
+using static Pepperoni.CanvasUtil;
 
 namespace CounterHUDMod
 {
@@ -13,7 +13,7 @@ namespace CounterHUDMod
         private static RectData legacy = new RectData(new Vector2(620, 30), new Vector2(0, 0),
                     new Vector2(0.75f, 0), new Vector2(0.80f, 0), new Vector2(0, 0));
         private static RectData hd = new RectData(new Vector2(620, 30), new Vector2(0, 0),
-                    new Vector2(0.90f, 0), new Vector2(0.95f, 0), new Vector2(0, 0));
+                    new Vector2(0.87f, 0), new Vector2(0.92f, 0), new Vector2(0, 0));
 
         private bool _enabled = false;
         private bool _remastered = false;
@@ -31,13 +31,13 @@ namespace CounterHUDMod
                 (_remastered) ? hd : legacy);
 
             GameObject panel = CreateBasePanel(_background,
-                new RectData(new Vector2(pep.width, pep.height), new Vector2(0,0), new Vector2(0,1), new Vector2(0,1)));
+                new RectData(new Vector2(pep.width, pep.height), new Vector2(0, 0), new Vector2(0, 1), new Vector2(0, 1)));
             panel.AddComponent<Image>().sprite = Sprite.Create(pep, new Rect(0, 0, pep.width, pep.height), Vector2.zero);
 
-            _textPanel = CreateTMProPanel(_background, string.Empty, 48, 
-                TextAnchor.UpperLeft,
+            _textPanel = CreateTMProPanel(_background, string.Empty, 48,
+                TextAnchor.UpperRight,
                 new RectData(new Vector2(-10, -5), new Vector2(0, 0), new Vector2(0.20f, 0), new Vector2(1, 1)));
-            
+
         }
 
         public void ToggleState(bool enabled)
@@ -57,7 +57,7 @@ namespace CounterHUDMod
                 int currentCollectibles = CollectibleScript.CollectiblesPickedUp;
                 string colorCode = (currentCollectibles < totalCollectibles) ? "FFFFFF" : "FFCE33";
                 t.text = $"<color=#{colorCode}>{currentCollectibles}/{totalCollectibles}";
-                if(_remastered !=  DebugManager.remastered)
+                if (_remastered != DebugManager.remastered)
                 {
                     _remastered = DebugManager.remastered;
                     UpdateRectTransform(_background, (_remastered) ? hd : legacy);

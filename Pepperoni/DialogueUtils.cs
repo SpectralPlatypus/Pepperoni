@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+﻿using System.Text;
 using System.Text.RegularExpressions;
 
 namespace Pepperoni
@@ -23,20 +20,20 @@ namespace Pepperoni
             return dialog.ToString();
         }
 
-        public static string MouthMove(uint isMouthMoving) => string.Concat("%m",isMouthMoving,"%");
+        public static string MouthMove(uint isMouthMoving) => string.Concat("%m", isMouthMoving, "%");
 
         public static string PauseDelay(float pauseDelay) => string.Concat("%s", pauseDelay.ToString(), "%");
 
         public static string PauseDelayDefault() => "%sD%";
 
-        public static string SoundFX(uint soundFxIndex) 
+        public static string SoundFX(uint soundFxIndex)
             => "%e" + ((soundFxIndex < 5) ? soundFxIndex.ToString() : "5") + "%";
 
         public static string GetNPCName(string dialogue)
         {
             string pattern = @"%v\d+%\s*(\w+)";
             Match m = Regex.Match(dialogue, pattern);
-            while(m.Success && m.Groups[1].Value == "Noid")
+            while (m.Success && m.Groups[1].Value == "Noid")
             {
                 m = m.NextMatch();
             }

@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using DustMath;
-using MonoMod;
-using UnityEngine;
-using UnityEngine.UI;
+﻿using MonoMod;
 
 #pragma warning disable CS0626, CS0108
 namespace Pepperoni.Patches

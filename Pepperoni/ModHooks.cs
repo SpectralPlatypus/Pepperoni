@@ -1,9 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using MonoMod;
-using Pepperoni.ModMenu;
 using UnityEngine;
 
 namespace Pepperoni
@@ -32,7 +28,7 @@ namespace Pepperoni
         /// Log Console instance
         /// </summary>
         private Console _console;
-        
+
         /// <summary>
         /// Mod API Version Major Number
         /// </summary>
@@ -41,7 +37,7 @@ namespace Pepperoni
         /// <summary>
         /// Mod API Version Minor Number
         /// </summary>
-        private const int _modVersionMinor = 6;
+        private const int _modVersionMinor = 8;
 
         /// <summary>
         /// Mod API Version string in "vX.Y" format
@@ -53,7 +49,7 @@ namespace Pepperoni
                 return $"v{_modVersionMajor}.{_modVersionMinor}";
             }
         }
-    
+
 
         private ModHooks()
         {
@@ -125,7 +121,7 @@ namespace Pepperoni
                 {
                     i.Invoke(currentCol, other);
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     Logger.LogError("[API] - " + ex);
                 }
@@ -345,14 +341,14 @@ namespace Pepperoni
             Logger.LogFine($"[API] - OnParseScript invoked");
             if (_OnParseScriptHook == null) return text;
 
-            string retVal = string.Empty;
+            string retVal = text;
 
             Delegate[] invocationList = _OnParseScriptHook.GetInvocationList();
             foreach (ParseScriptProxy i in invocationList)
             {
                 try
                 {
-                    retVal = i.Invoke(text);
+                    retVal = i.Invoke(retVal);
                 }
                 catch (Exception ex)
                 {

@@ -7,7 +7,18 @@ namespace Pepperoni.Patches
     class DialogueSystem : global::DialogueSystem
     {
         [MonoModIgnore] private bool SetCostumePortraits;
+        private portrait[] noidPortraits;
 
+        private extern void orig_Start();
+        private void Start()
+        {
+            noidPortraits = new portrait[4];
+            for (int k = 0; k < 4; k++)
+            {
+                noidPortraits[k] = Portraits[k];
+            }
+            orig_Start();
+        }
         private extern void orig_ParseScriptFile(string Text);
         private void ParseScriptFile(string Text)
         {
@@ -18,6 +29,20 @@ namespace Pepperoni.Patches
         /// <summary>
         /// Should be invoked if the mod changes character type to update the dialogue portrait
         /// </summary>
-        public void UpdateCostumePortrait() => SetCostumePortraits = false;
+        public void UpdateCostumePortrait()
+        {
+            if (PlayerMachine.CurrentCostume == Costumes.Default)
+            {
+                for (int k = 0; k < 4; k++)
+                {
+                    Portraits[k] = noidPortraits[k];
+                }
+                Portraits[7] = noidPortraits[4];
+            }
+            else
+            {
+                SetCostumePortraits = false;
+            }
+        }
     }
 }

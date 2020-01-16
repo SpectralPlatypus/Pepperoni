@@ -1,17 +1,16 @@
-﻿using System;
+﻿using Pepperoni;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Reflection;
-using System.Text;
-using Pepperoni;
 using UnityEngine;
 
 namespace CounterHUDMod
 {
     public class HUDMod : Mod
     {
-        private const string _modVersion = "1.0";
+        private const string _modVersion = "1.1";
         public Dictionary<string, Texture2D> images = new Dictionary<string, Texture2D>();
 
         public HUDMod() : base("HUDMod")

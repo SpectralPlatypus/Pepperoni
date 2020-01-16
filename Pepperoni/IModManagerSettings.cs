@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Pepperoni
 {
@@ -26,7 +24,7 @@ namespace Pepperoni
             logLevel = settings.logLevel;
 
             modEnableList = new Dictionary<string, bool>(settings.modEnableList.Count, settings.modEnableList.Comparer);
-            foreach(KeyValuePair<string, bool> kv in settings.modEnableList)
+            foreach (KeyValuePair<string, bool> kv in settings.modEnableList)
             {
                 modEnableList.Add(kv.Key, kv.Value);
             }
@@ -39,7 +37,7 @@ namespace Pepperoni
         /// <returns>True if mod was installed and enabled, false otherwise</returns>
         public bool IsModEnabled(string modName)
         {
-            if(modEnableList.ContainsKey(modName))
+            if (modEnableList.ContainsKey(modName))
             {
                 return modEnableList[modName];
             }

@@ -29,7 +29,7 @@ namespace Pepperoni
 
                 GameObject background = CanvasUtil.CreateImagePanel(OverlayCanvas,
                     new Color32(0x28, 0x28, 0x28, 0xE8),
-                    new CanvasUtil.RectData(new Vector2(0, 300), new Vector2(0, 0), 
+                    new CanvasUtil.RectData(new Vector2(0, 300), new Vector2(0, 0),
                     new Vector2(0, 0), new Vector2(1, 0), new Vector2(0, 0)));
 
                 _textPanel = CanvasUtil.CreateTextPanel(background, string.Join(string.Empty, _messages.ToArray()), 12, TextAnchor.UpperLeft,

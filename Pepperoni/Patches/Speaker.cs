@@ -1,6 +1,4 @@
 ﻿using MonoMod;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 #pragma warning disable CS0108, CS0626

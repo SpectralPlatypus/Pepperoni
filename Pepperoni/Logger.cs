@@ -24,9 +24,9 @@ namespace Pepperoni
         {
             Debug.Log("Creating Mod Logger");
             _logLevel = LogLevel.Debug;
-            
+
             FileStream fileStream = new FileStream(Application.persistentDataPath + ModHooks.PathSeperator + "ModLog.txt", FileMode.Create, FileAccess.Write, FileShare.ReadWrite);
-            Writer = new StreamWriter(fileStream, Encoding.UTF8) {AutoFlush = true};
+            Writer = new StreamWriter(fileStream, Encoding.UTF8) { AutoFlush = true };
         }
 
         internal static void SetLogLevel(LogLevel level) => _logLevel = level;
@@ -48,14 +48,14 @@ namespace Pepperoni
         /// <param name="message">Message to log</param>
         /// <param name="level">Level of Log</param>
         public static void Log(object message, LogLevel level) => Log(message.ToString(), level);
-    
+
 
         /// <summary>
         /// Finest/Lowest level of logging.  Usually reserved for developmental testing.
         /// </summary>
         /// <param name="message">Message to log</param>
         public static void LogFine(string message) => Log(message, LogLevel.Fine);
-        
+
         /// <summary>
         /// Finest/Lowest level of logging.  Usually reserved for developmental testing.
         /// </summary>

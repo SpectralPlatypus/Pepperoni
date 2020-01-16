@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.SceneManagement;
 
 namespace Pepperoni
@@ -14,7 +10,7 @@ namespace Pepperoni
 
         public void OnGUI()
         {
-            if(DrawString != null && SceneManager.GetActiveScene().name.Equals("title"))
+            if (DrawString != null && SceneManager.GetActiveScene().name.Equals("title"))
             {
                 if (style == null)
                     style = new GUIStyle(GUI.skin.label);
@@ -27,7 +23,7 @@ namespace Pepperoni
                 GUI.backgroundColor = Color.white;
                 GUI.contentColor = Color.white;
                 GUI.color = Color.white;
-                GUI.matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity, 
+                GUI.matrix = Matrix4x4.TRS(Vector3.zero, Quaternion.identity,
                     new Vector3((float)Screen.width / 1920f, (float)Screen.height / 1080f, 1f));
                 GUI.Label(new Rect(0f, 0f, 1920f, 1080f), DrawString, style);
                 GUI.backgroundColor = backgroundColor;
