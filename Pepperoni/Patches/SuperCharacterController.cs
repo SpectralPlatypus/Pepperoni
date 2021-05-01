@@ -10,7 +10,15 @@ namespace Pepperoni.Patches
         [MonoModIgnore] private Quaternion lastGroundRotation;
         [MonoModIgnore] private Vector3 lastGroundPosition;
         [MonoModIgnore] private Vector3 lastGroundOffset;
-        [MonoModIgnore] private bool clampToMovingGround;
+        [MonoModIgnore] public bool clampToMovingGround;
+
+
+        public class SuperGround
+        {
+            [MonoModPublic]
+            public LayerMask walkable;
+        }
+
 
         public Vector3 LastGroundPos { get { return lastGroundPosition; } set { lastGroundPosition = value; } }
         public Quaternion LastGroundRot { get { return lastGroundRotation; } set { lastGroundRotation = value; } }

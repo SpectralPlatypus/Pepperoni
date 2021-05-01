@@ -52,12 +52,6 @@
     <Reference Include="MonoMod">
       <HintPath>Monomod\MonoMod.exe</HintPath>
     </Reference>
-    <Reference Include="MonoMod.BaseLoader">
-      <HintPath>Monomod\MonoMod.BaseLoader.dll</HintPath>
-    </Reference>
-    <Reference Include="MonoMod.DebugIL">
-      <HintPath>Monomod\MonoMod.DebugIL.exe</HintPath>
-    </Reference>
     <Reference Include="MonoMod.RuntimeDetour">
       <HintPath>Monomod\MonoMod.RuntimeDetour.dll</HintPath>
     </Reference>
@@ -118,9 +112,6 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Vanilla\UnityEngine.UIModule.dll</HintPath>
     </Reference>
-    <Reference Include="YamlDotNet">
-      <HintPath>Monomod\YamlDotNet.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CanvasUtils.cs" />
@@ -170,6 +161,6 @@ rem "Rename files so the assembly has the correct name and the output works"
 move "MONOMODDED_Assembly-CSharp.dll" "MONOModded.dll"
 
 $(SolutionDir)\ILRepack\ILRepack.exe /out:OUTPUT_Assembly-CSharp.dll MONOModded.dll MMHOOK_Assembly-CSharp.dll MonoMod.Utils.dll Mono.Cecil.dll MonoMod.RuntimeDetour.dll
-copy /Y "$(ProjectDir)$(OutputPath)\OUTPUT_Assembly-CSharp.dll" "D:\Games\Yo Noid 2 GOAY - Mod\noid_Data\Managed\Assembly-CSharp.dll"</PostBuildEvent>
+copy /Y "$(ProjectDir)$(OutputPath)\OUTPUT_Assembly-CSharp.dll" "F:\Games\Yo Noid 2 GOAY - Mod\noid_Data\Managed\Assembly-CSharp.dll"</PostBuildEvent>
   </PropertyGroup>
 </Project>

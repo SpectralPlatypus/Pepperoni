@@ -23,6 +23,7 @@ namespace PPR_Standalone
         private bool cheeseDialog = true;
         private FieldInfo levelStr = typeof(PizzaBox).GetField("LevelToLoad", BindingFlags.Instance | BindingFlags.NonPublic);
         private Vector3 defaultWarp = new Vector3(854.5f, 58.6f, 223.4f);
+        private float npcDistance = 10.0f;
 
         public override void Initialize()
         {
@@ -112,7 +113,7 @@ namespace PPR_Standalone
             if (text.Contains("Oleia"))
             {
                 var playerPos = Manager.Player.GetComponent<PlayerMachine>().transform.position;
-                if (SceneManager.GetActiveScene().name != "void" || Vector3.Distance(npcPos, playerPos) > 10f)
+                if (SceneManager.GetActiveScene().name != "void" || Vector3.Distance(npcPos, playerPos) > npcDistance)
                     return text;
 
                 if (Kueido.Input.Dab.Held)
@@ -144,7 +145,7 @@ namespace PPR_Standalone
                 else if (cheeseAttempt && cheeseDialog)
                 {
                     cheeseDialog = false;
-                    return "%n10%v6%\r\nLegs\r\n%m1%DID YOU SERIOUSLY THINK THAT WAS GOING TO WORK???\r\n\r\n%n";
+                    return "%n10%v6%\r\nLegs\r\n%m1%DID YOU REALLY THINK THAT WAS GOING TO WORK?!\r\n\r\n%n";
                 }
                 else
                 {
@@ -176,6 +177,11 @@ namespace PPR_Standalone
                     if (DialogueUtils.GetNPCName(textAsset.text) == "Oleia")
                     {
                         legsNpc = npc;
+                        var collider = npc.GetComponentInChildren<Collider>();
+                        if (collider)
+                        {
+                            npcDistance = collider.bounds.size.x;
+                        }
                         break;
                     }
                 }

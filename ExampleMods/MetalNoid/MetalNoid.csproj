@@ -35,7 +35,7 @@
       <HintPath>..\..\Vanilla\Assembly-CSharp-firstpass.dll</HintPath>
     </Reference>
     <Reference Include="OUTPUT_Assembly-CSharp">
-      <HintPath>..\..\Pepperoni\bin\Debug\OUTPUT_Assembly-CSharp.dll</HintPath>
+      <HintPath>..\..\Pepperoni\bin\Release\OUTPUT_Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -65,6 +65,6 @@
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>copy /Y "$(TargetPath)" "D:\Games\Yo Noid 2 GOAY - Mod\noid_Data\Managed\Mods\$(TargetFileName)"</PostBuildEvent>
+    <PostBuildEvent>copy /Y "$(TargetPath)" "F:\Games\Yo Noid 2 GOAY - Mod\noid_Data\Managed\Mods\$(TargetFileName)"</PostBuildEvent>
   </PropertyGroup>
 </Project>

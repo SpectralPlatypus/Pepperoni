@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.271
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.181
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pepperoni", "Pepperoni\Pepperoni.csproj", "{05672F91-FA7C-4E31-865E-D7ABE1A898BF}"
 EndProject
@@ -21,6 +21,24 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Noid_CounterHUDMod", "Examp
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IGTMod", "ExampleMods\IGTMod\IGTMod\IGTMod.csproj", "{7E1666AF-EF01-4067-9D96-F13E219D7AF1}"
+	ProjectSection(ProjectDependencies) = postProject
+		{05672F91-FA7C-4E31-865E-D7ABE1A898BF} = {05672F91-FA7C-4E31-865E-D7ABE1A898BF}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FastGreen", "ExampleMods\FastGreen\FastGreen.csproj", "{31C5836B-5528-42F7-9541-3DB6E157D657}"
+	ProjectSection(ProjectDependencies) = postProject
+		{05672F91-FA7C-4E31-865E-D7ABE1A898BF} = {05672F91-FA7C-4E31-865E-D7ABE1A898BF}
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BGMute", "ExampleMods\BGMute\BGMute.csproj", "{E3A7A821-782D-4419-8945-38D8466CAD45}"
+	ProjectSection(ProjectDependencies) = postProject
+		{05672F91-FA7C-4E31-865E-D7ABE1A898BF} = {05672F91-FA7C-4E31-865E-D7ABE1A898BF}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuilderNoid", "ExampleMods\BuilderNoid\BuilderNoid.csproj", "{68FCC17D-26A0-4BE3-86D1-F644A1DF16AA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{05672F91-FA7C-4E31-865E-D7ABE1A898BF} = {05672F91-FA7C-4E31-865E-D7ABE1A898BF}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -48,6 +66,18 @@ Global
 		{7E1666AF-EF01-4067-9D96-F13E219D7AF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7E1666AF-EF01-4067-9D96-F13E219D7AF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7E1666AF-EF01-4067-9D96-F13E219D7AF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31C5836B-5528-42F7-9541-3DB6E157D657}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31C5836B-5528-42F7-9541-3DB6E157D657}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31C5836B-5528-42F7-9541-3DB6E157D657}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31C5836B-5528-42F7-9541-3DB6E157D657}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E3A7A821-782D-4419-8945-38D8466CAD45}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E3A7A821-782D-4419-8945-38D8466CAD45}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E3A7A821-782D-4419-8945-38D8466CAD45}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E3A7A821-782D-4419-8945-38D8466CAD45}.Release|Any CPU.Build.0 = Release|Any CPU
+		{68FCC17D-26A0-4BE3-86D1-F644A1DF16AA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{68FCC17D-26A0-4BE3-86D1-F644A1DF16AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{68FCC17D-26A0-4BE3-86D1-F644A1DF16AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{68FCC17D-26A0-4BE3-86D1-F644A1DF16AA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
