@@ -12,11 +12,14 @@ namespace Pepperoni.Patches
         private extern void orig_Start();
         private void Start()
         {
-            noidPortraits = new portrait[4];
+            noidPortraits = new portrait[5];
             for (int k = 0; k < 4; k++)
             {
                 noidPortraits[k] = Portraits[k];
             }
+            // eye blink?
+            noidPortraits[4] = Portraits[7];
+
             orig_Start();
         }
         private extern void orig_ParseScriptFile(string Text);

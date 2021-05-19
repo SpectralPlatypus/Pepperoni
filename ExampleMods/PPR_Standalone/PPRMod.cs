@@ -11,7 +11,7 @@ namespace PPR_Standalone
 {
     public class PPRMod : Mod
     {
-        public PPRMod() : base("PPR", "2.1")
+        public PPRMod() : base("PPR", "2.2")
         {
         }
 
@@ -92,11 +92,16 @@ namespace PPR_Standalone
             if (pepCount > 0 && other != null)
             {
                 PlayerMachine p = other.GetComponent<PlayerMachine>();
-                if (!p.voided && !PlayerMachine.CurrentCostume.Equals(Costumes.Miku))
+
+                if (p && !p.voided && !PlayerMachine.CurrentCostume.Equals(Costumes.Miku))
                 {
                     int costumeIndex = Convert.ToInt32(Math.Truncate(UnityEngine.Random.Range(0f, 3.99f)));
                     p.SetCostume((Costumes)costumeIndex);
-                    Manager.Dialogue.UpdateCostumePortrait();
+
+                    if ((Costumes)costumeIndex != Costumes.Default)
+                    {
+                        Manager.Dialogue.UpdateCostumePortrait();
+                    }
 
                     if (UnityEngine.Random.value <= zapPercent)
                     {

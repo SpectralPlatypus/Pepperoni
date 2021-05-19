@@ -1,6 +1,5 @@
 ﻿using Pepperoni;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 namespace BGMute
 {

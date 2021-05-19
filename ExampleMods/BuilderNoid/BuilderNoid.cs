@@ -93,24 +93,24 @@ namespace BuilderNoid
                     if (Kueido.Input.Dab.Pressed)
                     {
                         protoBlock.SetActive(true);
-                         
+
                         state = BlockState.Placing;
                     }
                     break;
                 case BlockState.Placing:
                     if (Kueido.Input.Dab.Held)
                     {
-                        Vector3 normal =  
+                        Vector3 normal =
                             (playerMachine.currentState.Equals(PlayerStates.Walk)) ? playerMachine.controller.currentGround.PrimaryNormal() : playerMachine.controller.up;
                         protoBlock.transform.position = playerMachine.transform.position +
                             (normal * 2f) +
-                            (playerMachine.lookDirection * 5 * (playerMachine.Camera.zoom2+ 0.3f));
+                            (playerMachine.lookDirection * 5 * (playerMachine.Camera.zoom2 + 0.3f));
                         protoBlock.transform.up = normal;
                     }
                     else
                     {
                         // Place block etc
-                        if(protoBlock.GetComponent<ProtoBlock>().IsFree())
+                        if (protoBlock.GetComponent<ProtoBlock>().IsFree())
                         {
                             PlaceBlock(protoBlock.transform.position, protoBlock.transform.rotation);
                         }
