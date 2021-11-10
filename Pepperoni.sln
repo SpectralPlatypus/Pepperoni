@@ -40,6 +40,13 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuilderNoid", "ExampleMods\
 		{05672F91-FA7C-4E31-865E-D7ABE1A898BF} = {05672F91-FA7C-4E31-865E-D7ABE1A898BF}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjectDiva", "ExampleMods\ProjectDiva\ProjectDiva.csproj", "{35B8C0A2-1F56-4BDE-AC98-6A18072AFF3A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ConInput", "ExampleMods\ConInput\ConInput.csproj", "{B154D1F3-03BD-4E18-97E0-88CFD2498BB4}"
+	ProjectSection(ProjectDependencies) = postProject
+		{05672F91-FA7C-4E31-865E-D7ABE1A898BF} = {05672F91-FA7C-4E31-865E-D7ABE1A898BF}
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -78,6 +85,14 @@ Global
 		{68FCC17D-26A0-4BE3-86D1-F644A1DF16AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68FCC17D-26A0-4BE3-86D1-F644A1DF16AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68FCC17D-26A0-4BE3-86D1-F644A1DF16AA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{35B8C0A2-1F56-4BDE-AC98-6A18072AFF3A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{35B8C0A2-1F56-4BDE-AC98-6A18072AFF3A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{35B8C0A2-1F56-4BDE-AC98-6A18072AFF3A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{35B8C0A2-1F56-4BDE-AC98-6A18072AFF3A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B154D1F3-03BD-4E18-97E0-88CFD2498BB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B154D1F3-03BD-4E18-97E0-88CFD2498BB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B154D1F3-03BD-4E18-97E0-88CFD2498BB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B154D1F3-03BD-4E18-97E0-88CFD2498BB4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -130,6 +130,7 @@
     <Compile Include="ModHooks.cs" />
     <Compile Include="ModLoader.cs" />
     <Compile Include="ModMenu\ModMenuGui.cs" />
+    <Compile Include="Patches\ControllerManagement.cs" />
     <Compile Include="Patches\DebugManager.cs" />
     <Compile Include="Patches\DRM\Pause.cs" />
     <Compile Include="Patches\DRM\IntroSwitch.cs" />

@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net35</TargetFramework>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+    <AssemblyName>NativeCInput</AssemblyName>
+    <RootNamespace>NativeCInput</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="OUTPUT_Assembly-CSharp">
+      <HintPath>..\..\Pepperoni\bin\Release\OUTPUT_Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\Vanilla\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\Vanilla\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="JSL\JoyShockLibrary.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="copy /Y &quot;$(TargetPath)&quot; &quot;F:\Games\Yo Noid 2 GOAY - Mod\noid_Data\Managed\Mods\$(TargetFileName)&quot;" />
+  </Target>
+
+</Project>

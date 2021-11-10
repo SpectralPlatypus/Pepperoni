@@ -15,7 +15,6 @@ namespace PPR_Standalone
         {
         }
 
-        private const float zapPercent = 0.07f;
         private readonly Vector3 npcPos = new Vector3(777.6f, 306.6f, 436.8f);
         private readonly Quaternion npcRot = new Quaternion(-0.2f, -0.2f, 0.1f, 0.9f);
         private readonly Vector3 camPos = new Vector3(776.5f, 302.1f, 460.3f);
@@ -25,6 +24,10 @@ namespace PPR_Standalone
         private Vector3 defaultWarp = new Vector3(854.5f, 58.6f, 223.4f);
         private float npcDistance = 10.0f;
 
+        private const double zapPercent = 0.05;
+        private const float zapDuration = 1.2f;
+        private System.Random zapRandom = new System.Random(Guid.NewGuid().GetHashCode());
+
         public override void Initialize()
         {
             SceneManager.activeSceneChanged += OnSceneChange;
@@ -33,7 +36,7 @@ namespace PPR_Standalone
             On.PlanetDoor.Tugged += PlanetDoor_Tugged;
             On.FadeoutLoad.OnTriggerEnter += FadeoutLoad_OnTriggerEnter;
 
-            // All this effort to prevent Crust from cheesing the door mechanics
+            // Prevent player from cheesing via dab clip
             On.CameraLocation.OnTriggerEnter += CameraLocation_OnTriggerEnter;
             On.CameraLocation.OnTriggerExit += CameraLocation_OnTriggerExit;
         }
@@ -95,7 +98,7 @@ namespace PPR_Standalone
 
                 if (p && !p.voided && !PlayerMachine.CurrentCostume.Equals(Costumes.Miku))
                 {
-                    int costumeIndex = Convert.ToInt32(Math.Truncate(UnityEngine.Random.Range(0f, 3.99f)));
+                    int costumeIndex = UnityEngine.Random.Range(0, 4);
                     p.SetCostume((Costumes)costumeIndex);
 
                     if ((Costumes)costumeIndex != Costumes.Default)
@@ -103,10 +106,11 @@ namespace PPR_Standalone
                         Manager.Dialogue.UpdateCostumePortrait();
                     }
 
-                    if (UnityEngine.Random.value <= zapPercent)
+                    double chance = zapRandom.NextDouble();
+                    if (chance < zapPercent)
                     {
-                        LogDebug($"{_name}: Zaptime!");
-                        p.GetStunned(1.2f);
+                        LogDebug($"{_name}: Zaptime! (Value of {chance:F3})");
+                        p.GetStunned(zapDuration);
                     }
                 }
             }

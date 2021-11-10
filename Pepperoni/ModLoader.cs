@@ -19,11 +19,12 @@ namespace Pepperoni
         {
             if (Loaded) return;
 
-            string path = string.Empty;
-            if (SystemInfo.operatingSystem.Contains("Windows"))
+            string path = String.Empty;
+
+            if (SystemInfo.operatingSystemFamily == OperatingSystemFamily.Windows)
                 path = Application.dataPath + @"\Managed\Mods";
-            else if (SystemInfo.operatingSystem.Contains("Mac")) //no mac release, oh well
-                path = Application.dataPath + "/Resources/Data/Managed/Mods/";
+            else if (SystemInfo.operatingSystemFamily == OperatingSystemFamily.MacOSX)
+                path = Application.dataPath + "/Resources/Data/Managed/Mods";
 
             if (string.IsNullOrEmpty(path) || !Directory.Exists(path))
             {
