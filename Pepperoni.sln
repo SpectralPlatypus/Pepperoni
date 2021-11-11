@@ -40,6 +40,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BuilderNoid", "ExampleMods\
 		{05672F91-FA7C-4E31-865E-D7ABE1A898BF} = {05672F91-FA7C-4E31-865E-D7ABE1A898BF}
 	EndProjectSection
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToonNoid", "ExampleMods\ToonNoid\ToonNoid.csproj", "{31C1AE12-81D3-42F3-A9AC-2B4A406B66CA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -78,10 +80,10 @@ Global
 		{68FCC17D-26A0-4BE3-86D1-F644A1DF16AA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68FCC17D-26A0-4BE3-86D1-F644A1DF16AA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68FCC17D-26A0-4BE3-86D1-F644A1DF16AA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{B154D1F3-03BD-4E18-97E0-88CFD2498BB4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{B154D1F3-03BD-4E18-97E0-88CFD2498BB4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{B154D1F3-03BD-4E18-97E0-88CFD2498BB4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{B154D1F3-03BD-4E18-97E0-88CFD2498BB4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{31C1AE12-81D3-42F3-A9AC-2B4A406B66CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{31C1AE12-81D3-42F3-A9AC-2B4A406B66CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{31C1AE12-81D3-42F3-A9AC-2B4A406B66CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{31C1AE12-81D3-42F3-A9AC-2B4A406B66CA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

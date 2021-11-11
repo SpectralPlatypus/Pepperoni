@@ -14,7 +14,7 @@ namespace MetalNoid
         {
         }
 
-        public override string GetVersion() => "1.42";
+        public override string GetVersion() => "1.6";
 
         public override void Initialize()
         {
@@ -50,7 +50,7 @@ namespace MetalNoid
             }
         }
 
-        public void OnSetCostume(SkinnedMeshRenderer skinnedMesh)
+        void OnSetCostume(SkinnedMeshRenderer skinnedMesh)
         {
             if (PlayerMachine.CurrentCostume != Costumes.Default) return;
             var mats = Resources.FindObjectsOfTypeAll<Material>();
@@ -65,7 +65,8 @@ namespace MetalNoid
             }
         }
 
-        public void OnEarlyUpdate(PlayerMachine playerMachine)
+        /*
+        void OnEarlyUpdate(PlayerMachine playerMachine)
         {
             if (PlayerMachine.CurrentCostume == Costumes.Default)
             {
@@ -76,5 +77,6 @@ namespace MetalNoid
                 playerMachine.FrictionMult = 1;
             }
         }
+        */
     }
 }
